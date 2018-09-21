@@ -3,5 +3,8 @@
 <h1><%= item.title %></h1>
 <p><%= item.subtitle %></p>
 <p><%= item.body %></p>
-<<%= image_tag  item.thumb_image unless item.thumb_image.nil? %>>  
+<%= link_to "Edit", edit_portfolio_path(item.id)%>
+<a href="portfolios/<%= item.id %>/edit">Edit2</a>
+<%= link_to "Create", new_portfolio_path %>
+<%= image_tag  item.thumb_image unless item.thumb_image.nil? %>
 <% end %>
