@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :find_current , only: [:edit,:update,:show]
+  before_action :find_current , only: [:edit,:update,:show,:destroy]
   def params_def
     return params.require(:portfolio).permit(:title,:subtitle,:body)
   end
@@ -24,6 +24,11 @@ class PortfoliosController < ApplicationController
   end
   def show
 
+    #code
+  end
+  def destroy
+    @port_items.destroy
+    redirect_to portfolios_path
     #code
   end
   def create

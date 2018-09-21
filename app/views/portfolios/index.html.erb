@@ -7,5 +7,6 @@
 <a href="portfolios/<%= item.id %>/edit">Edit2</a>
 <%= link_to "Create", new_portfolio_path %>
 <%= link_to "show" , portfolio_path(item.id) %>
+<%= link_to "destroy" , item , method: :delete, data: { confirm: 'Are you sure?' }%>
 <%= image_tag  item.thumb_image unless item.thumb_image.nil? %>
 <% end %>
