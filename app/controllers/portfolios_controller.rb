@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  before_action :find_current , only: [:edit,:update,:show]
   def params_def
     return params.require(:portfolio).permit(:title,:subtitle,:body)
   end
@@ -14,13 +15,15 @@ class PortfoliosController < ApplicationController
     #code
   end
   def edit
-    @port_items = find_current
   end
   def update
-    @port_items = find_current
     if @port_items.update(params_def)
       redirect_to portfolios_path
     end
+    #code
+  end
+  def show
+
     #code
   end
   def create
