@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
     return params.require(:portfolio).permit(:title,:subtitle,:body)
   end
   def find_current
-    @port_items = Portfolio.find(params[:id])
+    @port_items = Portfolio.friendly.find(params[:id])
   end
   def index
     @port_items = Portfolio.all

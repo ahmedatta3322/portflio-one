@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_22_162955) do
+ActiveRecord::Schema.define(version: 2018_09_22_172932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2018_09_22_162955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.integer "status", default: 0
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
   end
 
@@ -44,6 +45,8 @@ ActiveRecord::Schema.define(version: 2018_09_22_162955) do
     t.text "thumb_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_portfolios_on_slug", unique: true
   end
 
   create_table "skills", force: :cascade do |t|
