@@ -35,6 +35,8 @@ class PortfoliosController < ApplicationController
     @port_items = Portfolio.new(params_def)
     if @port_items.save
       redirect_to portfolios_path
+    else
+      render :new
     end
 
 
